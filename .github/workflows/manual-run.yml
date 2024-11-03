@@ -11,18 +11,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install dependencies in root (if needed)
-        run: npm install || true 
-
       - name: Install backend dependencies
         working-directory: crud_clientes_node/backend
         run: |
           npm install
+          npm install swagger-jsdoc
+
+      - name: Verify installed packages
+        working-directory: crud_clientes_node/backend
+        run: npm list
 
       - name: Start Backend
         working-directory: crud_clientes_node/backend
-        run: |
-          nohup node app.js &
+        run: node app.js
 
       - name: Wait for Backend
         run: sleep 5
