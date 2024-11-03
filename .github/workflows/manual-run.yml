@@ -28,8 +28,8 @@ jobs:
       - name: Install test dependencies
         working-directory: crud_clientes_test
         run: |
-          npm install
-          npm install jest jest-stare jest-html-reporter
+          npm install jest
+          npm install jest-stare
 
       - name: Run Tests
         working-directory: crud_clientes_test
@@ -39,4 +39,8 @@ jobs:
         working-directory: crud_clientes_test
         run: |
           mkdir -p jest-stare
-          cp jest-stare/report.html ./jest-stare/report.html
+          if [ -f jest-stare/report.html ]; then
+              cp jest-stare/report.html ./jest-stare/report.html # Copia o relatório gerado para o diretório adequado
+          else
+              echo "Relatório de testes não encontrado!"
+          fi
