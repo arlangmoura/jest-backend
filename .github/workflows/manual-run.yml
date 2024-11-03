@@ -11,10 +11,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Clear npm cache and install dependencies
-        working-directory: crud_clientes_node/backend 
+      - name: Install dependencies in root (if needed)
+        run: npm install || true 
+
+      - name: Install backend dependencies
+        working-directory: crud_clientes_node/backend
         run: |
-          npm cache clean --force
           npm install
 
       - name: Start Backend
