@@ -30,6 +30,7 @@ jobs:
         run: |
           npm install jest
           npm install jest-stare
+          npm install jest-html-reporter
 
       - name: Run Tests
         working-directory: crud_clientes_test
