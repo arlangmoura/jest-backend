@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        working-directory: crud_clientes_node 
+        working-directory: crud_clientes_node/backend 
         run: npm install
 
       - name: Start Backend
