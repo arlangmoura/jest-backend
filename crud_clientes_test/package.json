@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
+    "jest-html-reporter": "^3.10.2",
     "jest-stare": "^2.5.1"
   }
 }
