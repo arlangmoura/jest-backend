@@ -34,7 +34,7 @@ jobs:
 
       - name: Run Tests
         working-directory: crud_clientes_test
-        run: npx jest test
+        run: npx jest --config=jest.config.js # Adicionando a opção de configuração
 
       - name: Generate Test Report
         working-directory: crud_clientes_test
