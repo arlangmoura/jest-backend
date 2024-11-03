@@ -28,9 +28,15 @@ jobs:
       - name: Install test dependencies
         working-directory: crud_clientes_test
         run: |
-          npm install jest
-          npm install jest-stare
+          npm install
+          npm install jest jest-stare jest-html-reporter
 
       - name: Run Tests
         working-directory: crud_clientes_test
         run: npx jest test
+      
+       - name: Generate Test Report
+        working-directory: crud_clientes_test
+        run: |
+          mkdir -p jest-stare
+          cp jest-stare/report.html ./jest-stare/report.html
