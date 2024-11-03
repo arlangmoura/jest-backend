@@ -1,6 +1,5 @@
-name: 'Execucao manual'
+name: Run Backend and Tests
 
-# Permite que o fluxo seja executado manualmente
 on:
   workflow_dispatch:
 
@@ -13,19 +12,17 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: |
-          cd crud_clientes_node
-          npm install
+        working-directory: crud_clientes_node 
+        run: npm install
 
       - name: Start Backend
+        working-directory: crud_clientes_node/backend
         run: |
-          cd crud_clientes_node/backend
-          nohup node app.js & # 'nohup' e '&' mantém o processo rodando em segundo plano
+          nohup node app.js &
 
       - name: Wait for Backend
         run: sleep 5
 
       - name: Run Tests
-        run: |
-          cd crud_clientes_test
-          npx jest test
+        working-directory: crud_clientes_test
+        run: npx jest test
