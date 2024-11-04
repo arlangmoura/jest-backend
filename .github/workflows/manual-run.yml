@@ -39,9 +39,16 @@ jobs:
       - name: Generate Test Report
         working-directory: crud_clientes_test
         run: |
-          mkdir -p jest-stare
-          if [ -f jest-stare/report.html ]; then
-              cp jest-stare/report.html ./jest-stare/report.html # Copia o relatório gerado para o diretório adequado
+          mkdir -p reports
+          if [ -f jest-stare/index.html ]; then
+              cp jest-stare/index.html reports/jest-stare-report.html # Copia o relatório jest-stare
+              echo "Relatório jest-stare copiado com sucesso!"
           else
-              echo "Relatório de testes não encontrado!"
+              echo "Relatório jest-stare não encontrado!"
+          fi
+
+          if [ -f reports/test-report.html ]; then
+              echo "Relatório jest-html-reporter encontrado e está em reports/test-report.html!"
+          else
+              echo "Relatório jest-html-reporter não encontrado!"
           fi
