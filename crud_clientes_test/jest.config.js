@@ -12,7 +12,7 @@ module.exports = {
             outputPath: 'reports/test-report.html', // Caminho onde o relatório HTML será salvo
             includeFailureMsg: true, // Incluir mensagens de falha
             includeSuiteFailure: true, // Incluir falhas de suíte
-            customScriptPath: './custom_script.js', // Caminho para um script personalizado (opcional)
+            //customScriptPath: './custom_script.js', // Caminho para um script personalizado (opcional)
         }]
     ],
     // Adicione esta configuração para gerar relatórios em caso de falha
