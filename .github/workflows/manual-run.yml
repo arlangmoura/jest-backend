@@ -52,6 +52,8 @@ jobs:
           else
               echo "Relatório jest-html-reporter não encontrado!"
           fi
+          
+      # Adicionando a etapa de upload dos relatórios como artefatos
       - name: Upload jest-stare Report
         uses: actions/upload-artifact@v3
         with:
